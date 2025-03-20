@@ -1,6 +1,5 @@
 package edu.palermo;
 
-
 import edu.palermo.administracion.EmpleadoAdministrativo;
 import edu.palermo.administracion.Empresa;
 
