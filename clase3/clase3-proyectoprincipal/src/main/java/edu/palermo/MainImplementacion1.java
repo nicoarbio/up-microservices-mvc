@@ -1,11 +1,15 @@
 package edu.palermo;
 
-import edu.palermo.administracion.EmpleadoAdministrativo;
-import edu.palermo.administracion.Empresa;
+import edu.palermo.implementacion1.Empleado;
+import edu.palermo.implementacion1.EmpleadoFreelance;
+import edu.palermo.implementacion1.EmpleadoRelacionDependencia;
+import edu.palermo.implementacion1.administracion.EmpleadoAdministrativo;
+import edu.palermo.implementacion1.administracion.Empresa;
 
-public class Main {
+public class MainImplementacion1 {
 
     public static void main(String[] args) {
+        System.out.println("Prueba con implementación 1");
         Empresa up = new Empresa("Palermo", "2021", "Educación");
 
         Empleado nico = new EmpleadoFreelance("Nico", "Palermo", 25, 1000, 10);

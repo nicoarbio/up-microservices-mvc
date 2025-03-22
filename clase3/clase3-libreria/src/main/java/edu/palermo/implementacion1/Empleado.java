@@ -1,4 +1,4 @@
-package edu.palermo;
+package edu.palermo.implementacion1;
 
 public interface Empleado {
 

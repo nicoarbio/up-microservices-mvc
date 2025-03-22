@@ -1,6 +1,6 @@
-package edu.palermo.administracion;
+package edu.palermo.implementacion1.administracion;
 
-import edu.palermo.Empleado;
+import edu.palermo.implementacion1.Empleado;
 
 public class EmpleadoAdministrativo {
 

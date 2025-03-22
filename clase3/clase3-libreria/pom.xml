@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.palermo</groupId>
-    <artifactId>practica-clase3</artifactId>
+    <artifactId>clase3-libreria</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
