@@ -1,4 +1,4 @@
-package org.up.clasemvc.exception;
+package org.up.clasemvc.vehiculo.exception;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

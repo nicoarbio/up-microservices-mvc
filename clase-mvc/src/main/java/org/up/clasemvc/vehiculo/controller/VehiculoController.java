@@ -1,12 +1,12 @@
-package org.up.clasemvc.controller;
+package org.up.clasemvc.vehiculo.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.up.clasemvc.model.Vehiculo;
-import org.up.clasemvc.service.VehiculoService;
+import org.up.clasemvc.vehiculo.model.Vehiculo;
+import org.up.clasemvc.vehiculo.service.VehiculoService;
 
 import java.util.Collections;
 import java.util.List;

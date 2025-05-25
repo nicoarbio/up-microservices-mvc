@@ -1,7 +1,7 @@
-package org.up.clasemvc.repository;
+package org.up.clasemvc.vehiculo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.up.clasemvc.model.Vehiculo;
+import org.up.clasemvc.vehiculo.model.Vehiculo;
 
 import java.util.UUID;
 

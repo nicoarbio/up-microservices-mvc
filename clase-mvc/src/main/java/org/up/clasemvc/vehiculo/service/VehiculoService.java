@@ -1,10 +1,10 @@
-package org.up.clasemvc.service;
+package org.up.clasemvc.vehiculo.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.up.clasemvc.model.Vehiculo;
-import org.up.clasemvc.repository.VehiculoRepository;
+import org.up.clasemvc.vehiculo.model.Vehiculo;
+import org.up.clasemvc.vehiculo.repository.VehiculoRepository;
 
 import java.util.*;
 
