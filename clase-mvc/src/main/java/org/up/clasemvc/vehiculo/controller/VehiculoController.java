@@ -5,7 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.up.clasemvc.vehiculo.model.Vehiculo;
+import org.up.clasemvc.vehiculo.dto.VehiculoRequest;
+import org.up.clasemvc.vehiculo.dto.VehiculoResponse;
 import org.up.clasemvc.vehiculo.service.VehiculoService;
 
 import java.util.Collections;
@@ -21,21 +22,21 @@ public class VehiculoController {
     private final VehiculoService vehiculoService;
 
     @PostMapping
-    public ResponseEntity<Vehiculo> crearVehiculo(@Valid @RequestBody Vehiculo vehiculo) {
-        Vehiculo creado = vehiculoService.crear(vehiculo);
+    public ResponseEntity<VehiculoResponse> crearVehiculo(@Valid @RequestBody VehiculoRequest vehiculo) {
+        VehiculoResponse creado = vehiculoService.crear(vehiculo);
         return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Vehiculo> obtenerVehiculo(@PathVariable UUID id) {
-        Optional<Vehiculo> vehiculo = vehiculoService.obtenerPorId(id);
+    public ResponseEntity<VehiculoResponse> obtenerVehiculo(@PathVariable UUID id) {
+        Optional<VehiculoResponse> vehiculo = vehiculoService.obtenerPorId(id);
         return vehiculo.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
-    public ResponseEntity<List<Vehiculo>> obtenerTodos() {
-        List<Vehiculo> vehiculos = vehiculoService.obtenerTodos();
+    public ResponseEntity<List<VehiculoResponse>> obtenerTodos() {
+        List<VehiculoResponse> vehiculos = vehiculoService.obtenerTodos();
         if (vehiculos.isEmpty()) {
             return ResponseEntity.ok().body(Collections.emptyList()); // o .noContent().build()
         }
