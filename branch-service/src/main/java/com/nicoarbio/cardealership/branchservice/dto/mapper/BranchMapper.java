@@ -12,16 +12,22 @@ import java.util.stream.Collectors;
 public class BranchMapper {
 
     public Branch toEntity(BranchRequest req) {
-        Branch b = new Branch();
-        b.setName(req.name());
-        b.setCountry(req.country());
-        b.setProvince(req.province());
-        b.setCity(req.city());
-        b.setAddress(req.address());
-        b.setOpeningDate(req.openingDate());
-        b.setLocalDeliveryTimeDays(req.localDeliveryTimeDays());
-        b.setCentralDeliveryTimeDays(req.centralDeliveryTimeDays());
-        return b;
+        return toEntity(req, null);
+    }
+
+    public Branch toEntity(BranchRequest req, Branch existing) {
+        if (existing == null) {
+            existing = new Branch();
+        }
+        existing.setName(req.name());
+        existing.setCountry(req.country());
+        existing.setProvince(req.province());
+        existing.setCity(req.city());
+        existing.setAddress(req.address());
+        existing.setOpeningDate(req.openingDate());
+        existing.setLocalDeliveryTimeDays(req.localDeliveryTimeDays());
+        existing.setCentralDeliveryTimeDays(req.centralDeliveryTimeDays());
+        return existing;
     }
 
     public BranchResponse toResponse(Branch b) {

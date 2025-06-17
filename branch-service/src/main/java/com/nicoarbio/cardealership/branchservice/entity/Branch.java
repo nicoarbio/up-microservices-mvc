@@ -17,7 +17,7 @@ public class Branch implements Serializable {
     @Id @GeneratedValue
     private UUID id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, unique = true)
     private String name;
     @Column(nullable = false, length = 50)
     private String country;
@@ -77,5 +77,22 @@ public class Branch implements Serializable {
 
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+
+    @Override
+    public String toString() {
+        return "Branch{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", openingDate=" + openingDate +
+                ", localDeliveryTimeDays=" + localDeliveryTimeDays +
+                ", centralDeliveryTimeDays=" + centralDeliveryTimeDays +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 
 }

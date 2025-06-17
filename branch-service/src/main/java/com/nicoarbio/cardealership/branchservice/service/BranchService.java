@@ -4,8 +4,10 @@ import com.nicoarbio.cardealership.branchservice.dto.BranchRequest;
 import com.nicoarbio.cardealership.branchservice.dto.BranchResponse;
 import com.nicoarbio.cardealership.branchservice.dto.mapper.BranchMapper;
 import com.nicoarbio.cardealership.branchservice.entity.Branch;
+import com.nicoarbio.cardealership.branchservice.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.branchservice.repository.BranchRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,18 +38,32 @@ public class BranchService {
     @Transactional
     public BranchResponse create(BranchRequest request) {
         Branch entity = mapper.toEntity(request);
-        return mapper.toResponse(repository.save(entity));
+        try {
+            repository.saveAndFlush(entity);
+            return mapper.toResponse(entity);
+        } catch (DataIntegrityViolationException e) {
+            throw new EntityAlreadyExistsException("Branch `" + request.name() + "` already exists", e);
+        }
     }
 
     @Transactional
     public BranchResponse update(UUID id, BranchRequest request) {
-        Branch entity = mapper.toEntity(request);
-        entity.setId(id);
-        return mapper.toResponse(repository.save(entity));
+        final Branch existing = repository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Branch " + id + " not found"));
+        mapper.toEntity(request, existing);
+        try {
+            repository.saveAndFlush(existing);
+            return mapper.toResponse(existing);
+        } catch (DataIntegrityViolationException e) {
+            throw new EntityAlreadyExistsException("Branch `" + request.name() + "` already exists", e);
+        }
     }
 
     @Transactional
     public void delete(UUID id) {
+        if (!repository.existsById(id)) {
+            throw new NoSuchElementException("Branch " + id + " not found");
+        }
         repository.deleteById(id);
     }
 

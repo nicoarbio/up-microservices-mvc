@@ -1,19 +1,16 @@
 package com.nicoarbio.cardealership.branchservice.dto;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
 public record BranchRequest(
-        @NotBlank String name,
-        @NotBlank String country,
-        @NotBlank String province,
-        @NotBlank String city,
-        @NotBlank String address,
-        @NotBlank @PastOrPresent LocalDate openingDate,
-        @NotBlank @Min(1) @Max(14) Integer localDeliveryTimeDays,
-        @NotBlank @Min(1) @Max(30) Integer centralDeliveryTimeDays
+        @NotBlank @Size(min = 1, max = 100) String name,
+        @NotBlank @Size(min = 1, max = 50) String country,
+        @NotBlank @Size(min = 1, max = 50) String province,
+        @NotBlank @Size(min = 1, max = 50) String city,
+        @NotBlank @Size(min = 1, max = 255) String address,
+        @NotNull @PastOrPresent LocalDate openingDate,
+        @NotNull @Min(1) @Max(14) Integer localDeliveryTimeDays,
+        @NotNull @Min(1) @Max(30) Integer centralDeliveryTimeDays
 ) {}
