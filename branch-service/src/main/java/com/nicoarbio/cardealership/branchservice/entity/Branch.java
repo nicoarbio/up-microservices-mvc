@@ -19,6 +19,7 @@ public class Branch implements Serializable {
 
     @Column(nullable = false, length = 100, unique = true)
     private String name;
+
     @Column(nullable = false, length = 50)
     private String country;
     @Column(nullable = false, length = 50)
@@ -27,7 +28,6 @@ public class Branch implements Serializable {
     private String city;
     @Column(nullable = false, length = 255)
     private String address;
-
     @Column(nullable = false)
     private LocalDate openingDate;
     @Column(nullable = false)

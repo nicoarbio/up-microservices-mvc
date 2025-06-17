@@ -40,10 +40,10 @@ public class BranchService {
         Branch entity = mapper.toEntity(request);
         try {
             repository.saveAndFlush(entity);
-            return mapper.toResponse(entity);
         } catch (DataIntegrityViolationException e) {
             throw new EntityAlreadyExistsException("Branch `" + request.name() + "` already exists", e);
         }
+        return mapper.toResponse(entity);
     }
 
     @Transactional
