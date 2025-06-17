@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.branch_service;
+package com.nicoarbio.cardealership.branchservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
