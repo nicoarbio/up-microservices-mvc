@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nicoarbio/up-microservices-springboot)
+
 # Car Dealership Microservices System
 
 This project implements a microservices-based backend system for a national car dealership network. It is developed as part of an academic project using modern Java technologies and good architectural practices.
