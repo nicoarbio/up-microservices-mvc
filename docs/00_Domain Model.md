@@ -5,16 +5,16 @@ This document defines the core entities and their relationships for the car deal
 
 - Branch: Represents a branch location in a specific city and country.
 - VehicleModel: Represents a car model with year, price, warranty period
-- Stock: Represents vehicles (available, sold, reserved) in specific Branch or Central deposit (are VehicleModel with plate)
+- VehicleUnit: Represents vehicles (available, sold, reserved) in specific Branch or Central deposit (are VehicleModel with plate)
 - Customer: Represents a person who purchases vehicles or requests services.
-- Sale: Represents a vehicle sale operation, awarding a stock item to a customer. The vehicle should be mark as sold.
+- Sale: Represents a vehicle sale operation, awarding a stock item to a customer. The vehicle should be marked as sold.
 - MaintenanceService: Represents a mechanical service request for a vehicle with or without available warranty.
 
 ### Notes
-- A `Sale` links a `Customer`, `Stock`, and `Branch`.
-- A Vehicle in `Stock` may exist in branch stock or central stock (if c).
-- A `MaintenanceService` is associated with a `Customer` and a `Vehicle`.
-- `Warranty` eligibility is determined by comparing the sale date and vehicle warranty period with the service date.
+- A `Sale` links a `Customer`, `VehicleUnit`, and `Branch`.
+- A Vehicle in `VehicleUnit` may exist in branch stock or central stock (depending on its locationType).
+- A `MaintenanceService` is associated with a `Customer` and a `VehicleUnit`.
+- Warranty eligibility is calculated based on the VehicleModel's warranty period and the Sale date, compared to the MaintenanceService entry date.
 - When `VehicleUnit.status` is `EXTERNAL`, the vehicle was not sold nor stocked by the company. It exists only to support maintenance of external vehicles.
 
 ## Entities attributes
