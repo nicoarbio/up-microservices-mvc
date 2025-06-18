@@ -1,10 +1,10 @@
-package com.nicoarbio.cardealership.customer_service.service;
+package com.nicoarbio.cardealership.customerservice.service;
 
-import com.nicoarbio.cardealership.customer_service.dto.CustomerRequest;
-import com.nicoarbio.cardealership.customer_service.dto.CustomerResponse;
-import com.nicoarbio.cardealership.customer_service.dto.mapper.CustomerMapper;
-import com.nicoarbio.cardealership.customer_service.entity.Customer;
-import com.nicoarbio.cardealership.customer_service.repository.CustomerRepository;
+import com.nicoarbio.cardealership.customerservice.dto.CustomerRequest;
+import com.nicoarbio.cardealership.customerservice.dto.CustomerResponse;
+import com.nicoarbio.cardealership.customerservice.dto.mapper.CustomerMapper;
+import com.nicoarbio.cardealership.customerservice.entity.Customer;
+import com.nicoarbio.cardealership.customerservice.repository.CustomerRepository;
 import com.nicoarbio.cardealership.exception.types.EntityAlreadyExistsException;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.commons.lang.StringUtils;

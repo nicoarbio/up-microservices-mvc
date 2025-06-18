@@ -58,9 +58,9 @@ This document defines the core entities and their relationships for the car deal
 
 ### 👤 Customer
 - `id`: UUID
-- `firstName`: String
-- `lastName`: String
-- `dni`: String
+- `firstName`: String - UNIQUE
+- `lastName`: String - UNIQUE
+- `dni`: String - UNIQUE
 - `email`: String
 - `phone`: String
 - `address`: String

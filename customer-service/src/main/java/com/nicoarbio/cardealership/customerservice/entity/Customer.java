@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.customer_service.entity;
+package com.nicoarbio.cardealership.customerservice.entity;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -70,5 +70,19 @@ public class Customer implements Serializable {
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dni='" + dni + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 
 }

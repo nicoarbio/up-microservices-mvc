@@ -1,6 +1,6 @@
-package com.nicoarbio.cardealership.customer_service.repository;
+package com.nicoarbio.cardealership.customerservice.repository;
 
-import com.nicoarbio.cardealership.customer_service.entity.Customer;
+import com.nicoarbio.cardealership.customerservice.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

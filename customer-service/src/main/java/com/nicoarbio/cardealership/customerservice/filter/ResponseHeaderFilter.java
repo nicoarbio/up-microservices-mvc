@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.customer_service.filter;
+package com.nicoarbio.cardealership.customerservice.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

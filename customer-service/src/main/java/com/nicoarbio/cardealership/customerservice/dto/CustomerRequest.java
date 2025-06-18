@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.customer_service.dto;
+package com.nicoarbio.cardealership.customerservice.dto;
 
 import jakarta.validation.constraints.*;
 

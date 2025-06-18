@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.customer_service;
+package com.nicoarbio.cardealership.customerservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
