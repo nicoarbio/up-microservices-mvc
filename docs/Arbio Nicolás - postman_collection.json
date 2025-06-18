@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "d913d2aa-a061-418c-8317-f747507c2538",
+		"name": "Nicolás Arbio - Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13840846"
+	},
+	"item": [
+		{
+			"name": "Branch Service",
+			"item": [
+				{
+					"name": "Get All Branches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Branch by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/branches/{{branchId-get}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"branches",
+								"{{branchId-get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Branch",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Rosario Centro\",\n    \"country\": \"Argentina\",\n    \"province\": \"Santa Fe\",\n    \"city\": \"Rosario\",\n    \"address\": \"Av. Pellegrini 900\",\n    \"openingDate\": \"2022-05-01\",\n    \"localDeliveryTimeDays\": 2,\n    \"centralDeliveryTimeDays\": 6\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Branch",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Córdoba Norte\",\n    \"country\": \"Argentina\",\n    \"province\": \"Córdoba\",\n    \"city\": \"Córdoba Capital\",\n    \"address\": \"Av. Colon 23456\",\n    \"openingDate\": \"2020-03-15\",\n    \"localDeliveryTimeDays\": 3,\n    \"centralDeliveryTimeDays\": 7\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/branches/{{branchId-update}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"branches",
+								"{{branchId-update}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/branches/{{branchId-delete}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"branches",
+								"{{branchId-delete}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VehicleModel Service",
+			"item": [
+				{
+					"name": "Get All Models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/vehicles/{{vehicleId-get}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"vehicles",
+								"{{vehicleId-get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brand\": \"Chevrolet\",\n    \"model\": \"Trakcer\",\n    \"manufactureYear\": 2025,\n    \"type\": \"SUV\",\n    \"price\": 15000.00,\n    \"warrantyYears\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brand\": \"Volkswagen\",\n    \"model\": \"Golf\",\n    \"manufactureYear\": 2020,\n    \"type\": \"Sport\",\n    \"price\": 10500.00,\n    \"warrantyYears\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/vehicles/{{vehicleId-update}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"vehicles",
+								"{{vehicleId-update}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/vehicles/{{vehicleId-delete}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"vehicles",
+								"{{vehicleId-delete}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "vehicleId-get",
+			"value": "10bcdfb4-6254-443c-b34d-3d1c62363d7b",
+			"type": "default"
+		},
+		{
+			"key": "vehicleId-update",
+			"value": "e7860573-ca68-4152-bcbf-471f685f1ccc",
+			"type": "default"
+		},
+		{
+			"key": "vehicleId-delete",
+			"value": "4ff6c22a-4999-4aa0-bc31-52b9083e3d15",
+			"type": "default"
+		},
+		{
+			"key": "branchId-get",
+			"value": "b3fc3198-a404-48ac-88a7-ef938a94e3b4",
+			"type": "default"
+		},
+		{
+			"key": "branchId-update",
+			"value": "f23a2d20-5d6e-4f8f-a0a7-3c9e7e51f901",
+			"type": "default"
+		},
+		{
+			"key": "branchId-delete",
+			"value": "b3fc3198-a404-48ac-88a7-ef938a94e3b4",
+			"type": "default"
+		}
+	]
+}
