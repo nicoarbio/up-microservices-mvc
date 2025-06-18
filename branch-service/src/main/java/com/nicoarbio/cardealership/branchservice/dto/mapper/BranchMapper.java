@@ -30,19 +30,19 @@ public class BranchMapper {
         return existing;
     }
 
-    public BranchResponse toResponse(Branch b) {
+    public BranchResponse toResponse(Branch branch) {
         return new BranchResponse(
-                b.getId(),
-                b.getName(),
-                b.getCountry(),
-                b.getProvince(),
-                b.getCity(),
-                b.getAddress(),
-                b.getOpeningDate(),
-                b.getLocalDeliveryTimeDays(),
-                b.getCentralDeliveryTimeDays(),
-                b.getCreatedAt(),
-                b.getUpdatedAt()
+                branch.getId(),
+                branch.getName(),
+                branch.getCountry(),
+                branch.getProvince(),
+                branch.getCity(),
+                branch.getAddress(),
+                branch.getOpeningDate(),
+                branch.getLocalDeliveryTimeDays(),
+                branch.getCentralDeliveryTimeDays(),
+                branch.getCreatedAt(),
+                branch.getUpdatedAt()
         );
     }
 
