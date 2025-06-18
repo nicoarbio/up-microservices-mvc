@@ -103,7 +103,7 @@ All services will:
 - **Database**: H2
 - **Dependencies**:
   - Calls `customer-service` to validate customer
-  - Calls `stock-service` to mark vehicle as SOLD
+  - Calls `vehicle-unit-service` to mark vehicle as SOLD
   - Calls `branch-service` to validate branch
 - **Maven Dependencies:**
   - Spring Validation
@@ -121,7 +121,7 @@ All services will:
 - **Port**: `8086`
 - **Database**: H2
 - **Dependencies**:
-  - Calls `stock-service` to get `VehicleUnit`
+  - Calls `vehicle-unit-service` to get `VehicleUnit`
   - Calls `customer-service` to get `Customer`
   - Calls `sales-service` to determine warranty eligibility
 - **Maven Dependencies:**
