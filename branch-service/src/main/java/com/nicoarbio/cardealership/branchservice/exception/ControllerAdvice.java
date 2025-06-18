@@ -1,7 +1,7 @@
 package com.nicoarbio.cardealership.branchservice.exception;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import com.nicoarbio.cardealership.branchservice.exception.types.EntityAlreadyExistsException;
+import com.nicoarbio.cardealership.exception.types.EntityAlreadyExistsException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

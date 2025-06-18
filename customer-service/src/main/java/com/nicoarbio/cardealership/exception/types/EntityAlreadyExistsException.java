@@ -1,4 +1,4 @@
-package com.nicoarbio.cardealership.vehicle_units_service.exception.types;
+package com.nicoarbio.cardealership.exception.types;
 
 public class EntityAlreadyExistsException extends RuntimeException {
 

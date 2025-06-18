@@ -1,11 +1,11 @@
 package com.nicoarbio.cardealership.vehicle_units_service.service;
 
+import com.nicoarbio.cardealership.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.vehicle_units_service.dto.VehicleUnitRequest;
 import com.nicoarbio.cardealership.vehicle_units_service.dto.VehicleUnitFullResponse;
 import com.nicoarbio.cardealership.vehicle_units_service.dto.VehicleUnitResponse;
 import com.nicoarbio.cardealership.vehicle_units_service.dto.mapper.VehicleUnitMapper;
 import com.nicoarbio.cardealership.vehicle_units_service.entity.VehicleUnit;
-import com.nicoarbio.cardealership.vehicle_units_service.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.vehicle_units_service.integration.connector.VehicleModelClient;
 import com.nicoarbio.cardealership.vehicle_units_service.integration.dto.VehicleModel;
 import com.nicoarbio.cardealership.vehicle_units_service.repository.VehicleUnitRepository;

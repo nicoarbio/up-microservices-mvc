@@ -1,10 +1,10 @@
 package com.nicoarbio.cardealership.vehicle_service.service;
 
+import com.nicoarbio.cardealership.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.vehicle_service.dto.VehicleRequest;
 import com.nicoarbio.cardealership.vehicle_service.dto.VehicleResponse;
 import com.nicoarbio.cardealership.vehicle_service.dto.mapper.VehicleMapper;
 import com.nicoarbio.cardealership.vehicle_service.entity.Vehicle;
-import com.nicoarbio.cardealership.vehicle_service.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.vehicle_service.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.dao.DataIntegrityViolationException;
