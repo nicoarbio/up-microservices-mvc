@@ -28,22 +28,22 @@ public class VehicleMapper {
         return existing;
     }
 
-    public VehicleResponse toResponse(Vehicle b) {
+    public VehicleResponse toResponse(Vehicle vehicle) {
         return new VehicleResponse(
-                b.getId(),
-                b.getBrand(),
-                b.getModel(),
-                b.getManufactureYear(),
-                b.getType(),
-                b.getPrice(),
-                b.getWarrantyYears(),
-                b.getCreatedAt(),
-                b.getUpdatedAt()
+                vehicle.getId(),
+                vehicle.getBrand(),
+                vehicle.getModel(),
+                vehicle.getManufactureYear(),
+                vehicle.getType(),
+                vehicle.getPrice(),
+                vehicle.getWarrantyYears(),
+                vehicle.getCreatedAt(),
+                vehicle.getUpdatedAt()
         );
     }
 
-    public List<VehicleResponse> toResponseList(List<Vehicle> branches) {
-        return branches.stream().map(this::toResponse).collect(Collectors.toList());
+    public List<VehicleResponse> toResponseList(List<Vehicle> vehicles) {
+        return vehicles.stream().map(this::toResponse).collect(Collectors.toList());
     }
 
 }

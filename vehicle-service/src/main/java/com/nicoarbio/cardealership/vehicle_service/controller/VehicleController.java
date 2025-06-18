@@ -31,8 +31,8 @@ public class VehicleController {
     }
 
     @PostMapping
-    public ResponseEntity<VehicleResponse> create(@Valid @RequestBody VehicleRequest newBranch) {
-        return ResponseEntity.ok(service.create(newBranch));
+    public ResponseEntity<VehicleResponse> create(@Valid @RequestBody VehicleRequest newVehicle) {
+        return ResponseEntity.ok(service.create(newVehicle));
     }
 
     @PutMapping("/{id}")
