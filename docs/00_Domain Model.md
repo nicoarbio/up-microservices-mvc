@@ -42,16 +42,18 @@ This document defines the core entities and their relationships for the car deal
 - `warrantyYears`: Integer
 
 > `brand`, `model` and `manufactureYear` are a combination that uniquely identifies a vehicle model. Not a primary key, but a unique constraint.
+
 ---
 
 ### 📦 VehicleUnit
 - `id`: UUID
-- `licensePlate`: String
+- `licensePlate`: String - UNIQUE
 - `color`: String
-- `status`: VehicleUnitStatus as Enum[AVAILABLE, RESERVED, SOLD, EXTERNAL]
-- `locationType`: LocationType (Enum[CENTRAL, BRANCH, EXTERNAL])
-- `branch`: Optional<Branch> (FK) (nullable if locationType == CENTRAL)
+- `status`: VehicleUnitStatus as Enum[AVAILABLE, SOLD, EXTERNAL]
+- `locationType`: LocationType as Enum[CENTRAL, BRANCH, EXTERNAL]
 - `vehicleModel`: VehicleModel (FK)
+- `branch`: Optional<Branch> (FK) (nullable if locationType == CENTRAL)
+
 ---
 
 ### 👤 Customer

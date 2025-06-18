@@ -64,8 +64,8 @@ All services will:
 
 ---
 
-### 📦 `stock-service`
-- **Maven Artifact**: `stock-service`
+### 📦 `vehicle-unit-service`
+- **Maven Artifact**: `vehicle-unit-service`
 - **Responsibility**: Manage physical cars (`VehicleUnit`) including licensePlate, location, and status.
 - **Entities**: `VehicleUnit`
 - **Port**: `8083`

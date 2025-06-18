@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nicoarbio.cardealership</groupId>
-	<artifactId>stock-service</artifactId>
+	<artifactId>vehicle-unit-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stock-service</name>
-	<description>Stock Microservice for Car Dealership System</description>
+	<name>vehicle-unit-service</name>
+	<description>Vehicle Unit Microservice for Car Dealership System</description>
 	<url/>
 	<licenses>
 		<license/>
