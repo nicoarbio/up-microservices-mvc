@@ -76,10 +76,10 @@ public class ControllerAdvice {
     }
 
     /**
-     * Handles specific already existing Branch exceptions.
+     * Handles specific already existing Entity exception
      */
     @ExceptionHandler(EntityAlreadyExistsException.class)
-    public ResponseEntity<Map<String, Object>> handleBranchAlreadyExists(EntityAlreadyExistsException ex) {
+    public ResponseEntity<Map<String, Object>> handleEntityAlreadyExistsException(EntityAlreadyExistsException ex) {
         Map<String, Object> body = Map.of(
                 TIMESTAMP, LocalDateTime.now(),
                 STATUS, HttpStatus.CONFLICT.value(),
