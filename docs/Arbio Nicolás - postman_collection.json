@@ -15,13 +15,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/branches",
-							"protocol": "http",
+							"raw": "{{branch-service-host}}/api/v1/branches",
 							"host": [
-								"localhost"
+								"{{branch-service-host}}"
 							],
-							"port": "8081",
 							"path": [
+								"api",
+								"v1",
 								"branches"
 							]
 						}
@@ -34,13 +34,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/branches/{{branchId-get}}",
-							"protocol": "http",
+							"raw": "{{branch-service-host}}/api/v1/branches/{{branchId-get}}",
 							"host": [
-								"localhost"
+								"{{branch-service-host}}"
 							],
-							"port": "8081",
 							"path": [
+								"api",
+								"v1",
 								"branches",
 								"{{branchId-get}}"
 							]
@@ -63,13 +63,13 @@
 							"raw": "{\n    \"name\": \"Rosario Centro\",\n    \"country\": \"Argentina\",\n    \"province\": \"Santa Fe\",\n    \"city\": \"Rosario\",\n    \"address\": \"Av. Pellegrini 900\",\n    \"openingDate\": \"2022-05-01\",\n    \"localDeliveryTimeDays\": 2,\n    \"centralDeliveryTimeDays\": 6\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/branches",
-							"protocol": "http",
+							"raw": "{{branch-service-host}}/api/v1/branches",
 							"host": [
-								"localhost"
+								"{{branch-service-host}}"
 							],
-							"port": "8081",
 							"path": [
+								"api",
+								"v1",
 								"branches"
 							]
 						}
@@ -91,13 +91,13 @@
 							"raw": "{\n    \"name\": \"Córdoba Norte\",\n    \"country\": \"Argentina\",\n    \"province\": \"Córdoba\",\n    \"city\": \"Córdoba Capital\",\n    \"address\": \"Av. Colon 23456\",\n    \"openingDate\": \"2020-03-15\",\n    \"localDeliveryTimeDays\": 3,\n    \"centralDeliveryTimeDays\": 7\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/branches/{{branchId-update}}",
-							"protocol": "http",
+							"raw": "{{branch-service-host}}/api/v1/branches/{{branchId-update}}",
 							"host": [
-								"localhost"
+								"{{branch-service-host}}"
 							],
-							"port": "8081",
 							"path": [
+								"api",
+								"v1",
 								"branches",
 								"{{branchId-update}}"
 							]
@@ -111,13 +111,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/branches/{{branchId-delete}}",
-							"protocol": "http",
+							"raw": "{{branch-service-host}}/api/v1/branches/{{branchId-delete}}",
 							"host": [
-								"localhost"
+								"{{branch-service-host}}"
 							],
-							"port": "8081",
 							"path": [
+								"api",
+								"v1",
 								"branches",
 								"{{branchId-delete}}"
 							]
@@ -136,13 +136,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/vehicles",
-							"protocol": "http",
+							"raw": "{{vehicle-model-service-host}}/api/v1/vehicles",
 							"host": [
-								"localhost"
+								"{{vehicle-model-service-host}}"
 							],
-							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"vehicles"
 							]
 						}
@@ -155,13 +155,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/vehicles/{{vehicleId-get}}",
-							"protocol": "http",
+							"raw": "{{vehicle-model-service-host}}/api/v1/vehicles/{{vehicleId-get}}",
 							"host": [
-								"localhost"
+								"{{vehicle-model-service-host}}"
 							],
-							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"vehicles",
 								"{{vehicleId-get}}"
 							]
@@ -184,13 +184,13 @@
 							"raw": "{\n    \"brand\": \"Chevrolet\",\n    \"model\": \"Trakcer\",\n    \"manufactureYear\": 2025,\n    \"type\": \"SUV\",\n    \"price\": 15000.00,\n    \"warrantyYears\": 3\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8082/vehicles",
-							"protocol": "http",
+							"raw": "{{vehicle-model-service-host}}/api/v1/vehicles",
 							"host": [
-								"localhost"
+								"{{vehicle-model-service-host}}"
 							],
-							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"vehicles"
 							]
 						}
@@ -212,13 +212,13 @@
 							"raw": "{\n    \"brand\": \"Volkswagen\",\n    \"model\": \"Golf\",\n    \"manufactureYear\": 2020,\n    \"type\": \"Sport\",\n    \"price\": 10500.00,\n    \"warrantyYears\": 3\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8082/vehicles/{{vehicleId-update}}",
-							"protocol": "http",
+							"raw": "{{vehicle-model-service-host}}/api/v1/vehicles/{{vehicleId-update}}",
 							"host": [
-								"localhost"
+								"{{vehicle-model-service-host}}"
 							],
-							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"vehicles",
 								"{{vehicleId-update}}"
 							]
@@ -232,15 +232,136 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/vehicles/{{vehicleId-delete}}",
-							"protocol": "http",
+							"raw": "{{vehicle-model-service-host}}/api/v1/vehicles/{{vehicleId-delete}}",
 							"host": [
-								"localhost"
+								"{{vehicle-model-service-host}}"
 							],
-							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"vehicles",
 								"{{vehicleId-delete}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VehicleUnit Service",
+			"item": [
+				{
+					"name": "Get All Models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle Unit by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units/{{vehicleUnitId-get}}",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units",
+								"{{vehicleUnitId-get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vehicle Unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"color\": \"Purple\",\n    \"licencePlate\": \"NI-987-AR\",\n    \"status\": \"AVAILABLE\",\n    \"locationType\": \"BRANCH\",\n    \"branchId\": \"b3fc3198-a404-48ac-88a7-ef938a94e3b4\",\n    \"vehicleModelId\": \"1804debb-7060-46b8-8ab8-2450c6a0048a\"\n}"
+						},
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vehicle Unit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"a01ddc97-1e47-4e8a-98c4-deebabdd8e54\",\n    \"licencePlate\": \"DX-112-AC\",\n    \"color\": \"White\",\n    \"status\": \"AVAILABLE\",\n    \"locationType\": \"BRANCH\",\n    \"branchId\": \"313914e7-1e5e-42bb-a2e9-70b9eb207978\",\n    \"vehicleModelId\": \"43291eef-0a36-4245-b3d0-ce5be64dfa04\"\n}"
+						},
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units/{{vehicleUnitId-update}}",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units",
+								"{{vehicleUnitId-update}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vehicle Unit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units/{{vehicleUnitId-delete}}",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units",
+								"{{vehicleUnitId-delete}}"
 							]
 						}
 					},
@@ -273,6 +394,36 @@
 	],
 	"variable": [
 		{
+			"key": "branch-service-host",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "vehicle-model-service-host",
+			"value": "http://localhost:8082",
+			"type": "string"
+		},
+		{
+			"key": "vehicle-unit-service-host",
+			"value": "http://localhost:8083",
+			"type": "string"
+		},
+		{
+			"key": "customer-service-host",
+			"value": "http://localhost:8084",
+			"type": "string"
+		},
+		{
+			"key": "sales-service-host",
+			"value": "http://localhost:8085",
+			"type": "string"
+		},
+		{
+			"key": "maintenance-service-host",
+			"value": "http://localhost:8086",
+			"type": "string"
+		},
+		{
 			"key": "vehicleId-get",
 			"value": "10bcdfb4-6254-443c-b34d-3d1c62363d7b",
 			"type": "default"
@@ -300,6 +451,21 @@
 		{
 			"key": "branchId-delete",
 			"value": "b3fc3198-a404-48ac-88a7-ef938a94e3b4",
+			"type": "default"
+		},
+		{
+			"key": "vehicleUnitId-get",
+			"value": "f01ddc97-1e47-4e8a-98c4-deebabdd8e52",
+			"type": "default"
+		},
+		{
+			"key": "vehicleUnitId-update",
+			"value": "a01ddc97-1e47-4e8a-98c4-deebabdd8e54",
+			"type": "default"
+		},
+		{
+			"key": "vehicleUnitId-delete",
+			"value": "a01ddc97-1e47-4e8a-98c4-deebabdd8e60",
 			"type": "default"
 		}
 	]
