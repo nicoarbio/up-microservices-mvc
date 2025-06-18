@@ -36,11 +36,12 @@ This document defines the core entities and their relationships for the car deal
 - `id`: UUID
 - `brand`: String
 - `model`: String
-- `year`: Integer
+- `manufactureYear`: Integer
 - `type`: String (e.g. SUV, sedan)
 - `price`: BigDecimal
 - `warrantyYears`: Integer
 
+> `brand`, `model` and `manufactureYear` are a combination that uniquely identifies a vehicle model. Not a primary key, but a unique constraint.
 ---
 
 ### 📦 VehicleUnit
