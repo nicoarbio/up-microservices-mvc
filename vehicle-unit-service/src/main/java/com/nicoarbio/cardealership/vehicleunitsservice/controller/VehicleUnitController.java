@@ -3,6 +3,7 @@ package com.nicoarbio.cardealership.vehicleunitsservice.controller;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitRequest;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitFullResponse;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitResponse;
+import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitSoldRequest;
 import com.nicoarbio.cardealership.vehicleunitsservice.service.VehicleUnitService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,11 @@ public class VehicleUnitController {
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}/sold")
+    public ResponseEntity<VehicleUnitFullResponse> updateVehicleUnitSold(@PathVariable UUID id, @Valid @RequestBody VehicleUnitSoldRequest vehicleUnitSoldRequest) {
+        return ResponseEntity.ok(service.updateVehicleUnitSold(id, vehicleUnitSoldRequest));
     }
 
 }

@@ -4,8 +4,11 @@ import com.nicoarbio.cardealership.exception.types.EntityAlreadyExistsException;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitRequest;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitFullResponse;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitResponse;
+import com.nicoarbio.cardealership.vehicleunitsservice.dto.VehicleUnitSoldRequest;
 import com.nicoarbio.cardealership.vehicleunitsservice.dto.mapper.VehicleUnitMapper;
+import com.nicoarbio.cardealership.vehicleunitsservice.entity.LocationType;
 import com.nicoarbio.cardealership.vehicleunitsservice.entity.VehicleUnit;
+import com.nicoarbio.cardealership.vehicleunitsservice.entity.VehicleUnitStatus;
 import com.nicoarbio.cardealership.vehicleunitsservice.integration.connector.VehicleModelClient;
 import com.nicoarbio.cardealership.vehicleunitsservice.integration.dto.VehicleModel;
 import com.nicoarbio.cardealership.vehicleunitsservice.repository.VehicleUnitRepository;
@@ -77,4 +80,23 @@ public class VehicleUnitService {
         repository.deleteById(id);
     }
 
+    @Transactional
+    public VehicleUnitFullResponse updateVehicleUnitSold(UUID id, VehicleUnitSoldRequest vehicleUnitSoldRequest) {
+        VehicleUnit vehicleUnit = repository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Vehicle Unit " + id + " not found"));
+
+        if (vehicleUnit.getStatus().equals(VehicleUnitStatus.SOLD)) {
+            throw new IllegalStateException("Vehicle Unit " + id + " is already sold");
+        }
+
+        vehicleUnit.setStatus(VehicleUnitStatus.SOLD);
+        vehicleUnit.setLocation(LocationType.BRANCH);
+        vehicleUnit.setBranchId(vehicleUnitSoldRequest.branchId());
+
+        repository.saveAndFlush(vehicleUnit);
+
+        VehicleModel vehicleModel = vehicleModelClient.getVehicleModelById(vehicleUnit.getVehicleModelId().toString());
+
+        return mapper.toFullResponse(vehicleUnit, vehicleModel);
+    }
 }
