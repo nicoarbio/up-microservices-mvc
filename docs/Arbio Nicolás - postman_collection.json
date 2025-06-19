@@ -366,6 +366,259 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update Vehicle Unit Sold",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branchId\": \"313914e7-1e5e-42bb-a2e9-70b9eb207978\"\n}"
+						},
+						"url": {
+							"raw": "{{vehicle-unit-service-host}}/api/v1/vehicle-units/{{vehicleUnitId-sold}}/sold",
+							"host": [
+								"{{vehicle-unit-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle-units",
+								"{{vehicleUnitId-sold}}",
+								"sold"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Service",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers/{{customerId-get}}",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"{{customerId-get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer by DNI, Email or Phone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers/search?dni=00000001&email=nicolasarbio@outlook.com",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"search"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "00000001"
+								},
+								{
+									"key": "email",
+									"value": "nicolasarbio@outlook.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Sebastían\",\n    \"lastName\": \"Ducci\",\n    \"dni\": \"00000002\",\n    \"email\": \"sebastianducci@gmail.com\",\n    \"phone\": \"+54 9 11 2345-6780\",\n    \"address\": \"24 de Noviembre 2120, C1242AAT Cdad. Autónoma de Buenos Aires\"\n}"
+						},
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Juan\",\n    \"lastName\": \"Gómez\",\n    \"dni\": \"00000003\",\n    \"email\": \"juan.gomez@gmail.com\",\n    \"phone\": \"+34 9 11 3456-7890\",\n    \"address\": \"Av. Siempre Viva 123\"\n}"
+						},
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers/{{customerId-update}}",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"{{customerId-update}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{customer-service-host}}/api/v1/customers/{{customerId-delete}}",
+							"host": [
+								"{{customer-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"{{customerId-delete}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales Service",
+			"item": [
+				{
+					"name": "Get All Sales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sales-service-host}}/api/v1/sales",
+							"host": [
+								"{{sales-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sell by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sales-service-host}}/api/v1/sales/{{sellId-get}}",
+							"host": [
+								"{{sales-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sales",
+								"{{sellId-get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Sell",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehicleUnitId\": \"a01ddc97-1e47-4e8a-98c4-deebabdd8e58\",\n    \"customerId\": \"92e070f1-2590-4961-88e4-5e656c97ad26\",\n    \"branchId\": \"313914e7-1e5e-42bb-a2e9-70b9eb207978\"\n}"
+						},
+						"url": {
+							"raw": "{{sales-service-host}}/api/v1/sales",
+							"host": [
+								"{{sales-service-host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sales"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -466,6 +719,26 @@
 		{
 			"key": "vehicleUnitId-delete",
 			"value": "a01ddc97-1e47-4e8a-98c4-deebabdd8e60",
+			"type": "default"
+		},
+		{
+			"key": "customerId-get",
+			"value": "92e070f1-2590-4961-88e4-5e656c97ad26",
+			"type": "default"
+		},
+		{
+			"key": "customerId-update",
+			"value": "b2c3d4e5-7777-8888-9999-000011112222",
+			"type": "default"
+		},
+		{
+			"key": "customerId-delete",
+			"value": "92e070f1-2590-4961-88e4-5e656c97ad26",
+			"type": "default"
+		},
+		{
+			"key": "vehicleUnitId-sold",
+			"value": "a01ddc97-1e47-4e8a-98c4-deebabdd8e54",
 			"type": "default"
 		}
 	]

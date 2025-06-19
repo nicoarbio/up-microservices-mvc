@@ -72,9 +72,12 @@ This document defines the core entities and their relationships for the car deal
 - `id`: UUID
 - `amount`: BigDecimal
 - `saleDate`: LocalDate
+- `deliveryDate`: LocalDate
 - `customer`: Customer (FK)
 - `vehicleUnit`: VehicleUnit (FK)
 - `branch`: Branch (FK)
+
+> `id` and `vehicleUnit` are a combination that uniquely identifies a sale. Not a primary key, but a unique constraint.
 
 ---
 
