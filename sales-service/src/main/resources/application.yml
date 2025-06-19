@@ -22,6 +22,14 @@ spring:
     console:
       enabled: true
 
+  cloud:
+   openfeign:
+     httpclient:
+        hc5:
+          enabled: false
+     okhttp:
+       enabled: true
+
 # Eureka client configuration
 eureka:
   client:
@@ -31,6 +39,7 @@ eureka:
     register-with-eureka: true
   instance:
     prefer-ip-address: false
+
 
 # Actuator configuration
 management:

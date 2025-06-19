@@ -79,7 +79,7 @@ public class ControllerAdvice {
      * Handles specific already existing Entity exception
      */
     @ExceptionHandler({EntityAlreadyExistsException.class, IllegalStateException.class})
-    public ResponseEntity<Map<String, Object>> handleEntityAlreadyExistsException(EntityAlreadyExistsException ex) {
+    public ResponseEntity<Map<String, Object>> handleEntityAlreadyExistsException(RuntimeException ex) {
         Map<String, Object> body = Map.of(
                 TIMESTAMP, LocalDateTime.now(),
                 STATUS, HttpStatus.CONFLICT.value(),

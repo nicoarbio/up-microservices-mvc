@@ -13,6 +13,7 @@ import com.nicoarbio.cardealership.salesservice.integration.vehicleUnit.connecto
 import com.nicoarbio.cardealership.salesservice.integration.vehicleUnit.dto.LocationType;
 import com.nicoarbio.cardealership.salesservice.integration.vehicleUnit.dto.VehicleUnitFull;
 import com.nicoarbio.cardealership.salesservice.integration.vehicleUnit.dto.VehicleUnitSoldBranchRequest;
+import com.nicoarbio.cardealership.salesservice.integration.vehicleUnit.dto.VehicleUnitStatus;
 import com.nicoarbio.cardealership.salesservice.repository.SalesRepository;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -63,6 +64,9 @@ public class SalesService {
         Branch branch = branchClient.getBranchById(request.branchId().toString());
         if (vehicleUnit.branchId() != null && !vehicleUnit.branchId().equals(branch.id())) {
             throw new VehicleUnitNotAvailableException("Vehicle Unit " + vehicleUnit.id() + " must be in CENTRAL or specified BRANCH. Cannot be sold from branch ID " + branch.id());
+        }
+        if (vehicleUnit.status().equals(VehicleUnitStatus.SOLD)) {
+            throw new VehicleUnitNotAvailableException("Vehicle Unit " + vehicleUnit.id() + " is already SOLD. Cannot be sold again.");
         }
         Customer customer = customerClient.getCustomerById(request.customerId().toString());
 
